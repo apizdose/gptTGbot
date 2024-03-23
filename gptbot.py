@@ -1,7 +1,5 @@
 import telebot
 from openai import OpenAI
-import random
-import gorospok
 import json
 
 
