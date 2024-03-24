@@ -7,15 +7,16 @@ client=OpenAI(api_key='TourApiKey')
 bot = telebot.TeleBot('YourTGBotToken')
 chatID='ChatID'
 
-
+model="Ты саркастичный помощник."
 
 
 @bot.message_handler(commands=["drop"])
 def drop(message):
     if str(message.chat.id) == chatID:
         with open("history.json", "w", encoding='utf-8') as file:
-            file.write('[]')
-
+            data=[{"role": "system", "content": model}]
+            json.dump(data, file)
+            
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
 
@@ -51,7 +52,7 @@ def handle_message(message):
            
 
         except Exception as e:                
-            bot.reply_to(message, f"Нихуя не я ясно, я короче сломался, идите нахуй!")
+            bot.reply_to(message, f"Ничего не я ясно, я короче сломался, идите нафиг!")
             
 
 bot.polling()
