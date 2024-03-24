@@ -3,11 +3,11 @@ from openai import OpenAI
 import json
 
 
-client=OpenAI(api_key='TourApiKey')
+client=OpenAI(api_key='YourApiKey')
 bot = telebot.TeleBot('YourTGBotToken')
-chatID='ChatID'
+chatID='TgChatID'
 
-model="Ты саркастичный помощник."
+model="Ты саркастичный помощник." #Модель поведения
 
 
 @bot.message_handler(commands=["drop"])
