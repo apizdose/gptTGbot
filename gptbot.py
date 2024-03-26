@@ -55,5 +55,5 @@ def handle_message(message):
             bot.reply_to(message, f"Ничего не я ясно, я короче сломался, идите нафиг!")
             
 
-bot.polling()
+bot.polling(none_stop=True)
             
